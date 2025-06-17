@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HD PICTURE 8K PICTURE</title> <!-- Reverted title -->
+    <title>ALL VIRAL VIDEO</title>
     <style>
         body {
             background-color: #000000;
@@ -16,20 +16,20 @@
         header {
             text-align: center;
             padding: 20px 0;
-            background-color: #0a0a0a; /* Slightly lighter than body for depth */
+            background-color: #0a0a0a;
             border-bottom: 1px solid #333;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            color: #0099ff; /* A vibrant blue, reverting from orange */
+            color: #0099ff;
             letter-spacing: 1px;
             font-weight: bold;
         }
         nav {
             text-align: center;
             padding: 15px 0;
-            background-color: #181818; /* Dark gray for nav */
+            background-color: #181818;
             border-bottom: 1px solid #444;
         }
         nav a {
@@ -38,12 +38,12 @@
             margin: 0 15px;
             font-size: 1.1em;
             padding: 8px 15px;
-            border-radius: 6px; /* Reverted from pill shape for consistency with original theme */
+            border-radius: 6px;
             transition: background-color 0.3s ease, color 0.3s ease;
             font-weight: 500;
         }
         nav a:hover, nav a.active {
-            background-color: #007bff; /* Blue accent */
+            background-color: #007bff;
             color: #ffffff;
         }
         .page {
@@ -53,26 +53,24 @@
         .page.active-page {
             display: block;
         }
-        .page h2 { /* Page titles */
-            text-align: center; /* Center category titles */
+        .page h2 {
+            text-align: center;
             margin-top: 10px;
             margin-bottom: 25px;
-            font-size: 2em; /* Slightly larger for category titles */
-            color: #0099ff; /* Blue accent for titles */
+            font-size: 2em;
+            color: #0099ff;
         }
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Default to 2 columns for mobile-first */
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
-        /* Medium devices (tablets, 768px and up) */
         @media (min-width: 768px) {
             .image-gallery {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
         }
-        /* Large devices (laptops, 992px and up) */
         @media (min-width: 992px) {
             .image-gallery {
                 grid-template-columns: repeat(4, 1fr);
@@ -80,7 +78,7 @@
         }
 
         .image-item {
-            background-color: #1c1c1c; /* Darker item background */
+            background-color: #1c1c1c;
             border: 1px solid #383838;
             border-radius: 8px;
             padding: 12px;
@@ -92,33 +90,75 @@
         }
         .image-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35); /* Blue shadow */
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
         }
-        .image-item img {
+
+        .image-link {
+            position: relative;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .image-link img {
             width: 100%;
-            height: 280px; /* Maintained height for uniformity. object-fit: cover will fill this. */
-            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+            height: 280px;
+            object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 15px; /* Space between image and download button */
+            display: block;
         }
-        /* Removed .image-item .image-title styles as title is removed */
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .play-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #ffffff;
+            margin-left: 3px;
+        }
+        .image-link:hover .play-icon {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: rgba(0, 123, 255, 0.7);
+        }
+        .video-duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 500;
+            pointer-events: none;
+        }
 
         .download-btn {
             display: inline-block;
-            background-color: #007bff; /* Blue accent */
+            background-color: #007bff;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 6px; /* Standard button radius */
+            border-radius: 6px;
             font-size: 0.9em;
             font-weight: bold;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: auto; /* Pushes button to bottom */
+            margin-top: auto;
         }
         .download-btn:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
             transform: scale(1.03);
         }
         footer {
@@ -131,199 +171,144 @@
             color: #aaa;
         }
         /* Responsive adjustments */
-        @media (max-width: 767px) {
-            header h1 {
-                font-size: 2em;
-            }
-            nav {
-                padding: 10px 5px;
-            }
-            nav a {
-                font-size: 0.9em;
-                margin: 5px 5px;
-                padding: 7px 12px;
-            }
-            .page h2 {
-                font-size: 1.7em;
-            }
-            .image-item img {
-                height: 220px; /* Adjust image height for 2-column mobile */
-            }
-            .download-btn {
-                font-size: 0.85em;
-                padding: 8px 15px;
+        @media (max-width: 991px) {
+             .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
+        @media (max-width: 767px) {
+            header h1 { font-size: 2em; }
+            nav { padding: 10px 5px; }
+            nav a { font-size: 0.9em; margin: 5px 5px; padding: 7px 10px; }
+            .page h2 { font-size: 1.7em; }
+            .image-gallery { grid-template-columns: repeat(1, 1fr); }
+            .image-link img { height: 300px; }
+            .download-btn { font-size: 0.85em; padding: 8px 15px; }
+        }
          @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            nav { 
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin: 6px 0;
-                width: 80%;
-                text-align: center;
-            }
-            .image-gallery {
-                gap: 10px;
-            }
-            .image-item img {
-                height: 180px; /* Further adjust image height */
-            }
-             .page h2 {
-                font-size: 1.5em;
-            }
+            header h1 { font-size: 1.8em; }
+            nav { display: flex; flex-direction: column; align-items: center; }
+            nav a { margin: 6px 0; width: 80%; text-align: center; }
+            .page h2 { font-size: 1.5em; }
+            .image-link img { height: 250px; }
+            .play-icon { width: 50px; height: 50px; }
+            .play-icon svg { width: 22px; height: 22px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>HD PICTURE 8K PICTURE</h1> <!-- Reverted header title -->
+        <h1>ALL VIRAL VIDEO</h1>
     </header>
 
     <nav>
         <a href="#" data-page="home" class="nav-link active">Home</a>
-        <a href="#" data-page="anime" class="nav-link">Anime Picture</a>
-        <a href="#" data-page="natural" class="nav-link">Natural Wellpeper</a>
-        <a href="#" data-page="girlboy" class="nav-link">Girl Boy Picture</a>
+        <a href="#" data-page="new-video" class="nav-link">New video</a>
+        <a href="#" data-page="top-video" class="nav-link">Top video</a>
+        <a href="#" data-page="vip-video" class="nav-link">VIP video</a>
     </nav>
 
     <main>
         <section id="home" class="page active-page">
-            <h2>All Pictures</h2>
-            <div class="image-gallery">
-                <!-- All images will be populated by JavaScript -->
-            </div>
+            <h2>All Videos</h2>
+            <div class="image-gallery"></div>
         </section>
 
-        <section id="anime" class="page">
-            <h2>Anime Pictures</h2>
-            <div class="image-gallery">
-                <!-- Anime Images will be populated by JavaScript -->
-            </div>
+        <section id="new-video" class="page">
+            <h2>New Videos</h2>
+            <div class="image-gallery"></div>
         </section>
 
-        <section id="natural" class="page">
-            <h2>Natural Wallpapers</h2>
-            <div class="image-gallery">
-                <!-- Natural Pictures will be populated by JavaScript -->
-            </div>
+        <section id="top-video" class="page">
+            <h2>Top Videos</h2>
+            <div class="image-gallery"></div>
         </section>
 
-        <section id="girlboy" class="page">
-            <h2>Girl Boy Pictures</h2>
-            <div class="image-gallery">
-                <!-- Girl Boy Images will be populated by JavaScript -->
-            </div>
+        <section id="vip-video" class="page">
+            <h2>VIP Videos</h2>
+            <div class="image-gallery"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> HD PICTURE 8K PICTURE. All rights reserved.</p> <!-- Reverted footer -->
+        <p>© <span id="currentYear"></span> ALL VIRAL VIDEO. All rights reserved.</p>
     </footer>
 
     <script>
-        const imageData = {
-            anime: [ // Stays as "anime" key for Anime Picture category
-                "https://i.postimg.cc/d3BjfDxL/d579e176d57b6af0aadeb6a310295fa3.jpg",
-                "https://i.postimg.cc/9X7MYv7H/73988251d88c7b9a736e96f61dd244c7-1.jpg",
-                "https://i.postimg.cc/RVgj60ZS/8aeadcda26400cfe8737469e8354f642.jpg",
-                "https://i.postimg.cc/qqM148n8/77410055551000568cdcbe9eb4772be5.jpg",
-                "https://i.postimg.cc/RCytM7c4/830a5c0f9cd85a09c582a50a89e31dc1.jpg",
-                "https://i.postimg.cc/MZC5pMR2/a840ff24684e3afa29df2f7941f25bb1.jpg",
-                "https://i.postimg.cc/tJNsbMWg/18dc851194bafa32658bb79d1aef4ee6.jpg",
-                "https://i.postimg.cc/VkrzBhvb/0370589c8dff7647d6386e50efffd33f.jpg",
-                "https://i.postimg.cc/SR3vyghw/f05436f6b84fa56b05208d0f5be61972.jpg",
-                "https://i.postimg.cc/RFNr46tJ/da9113cfea60dba575c75f0190237f4e.jpg"
-            ],
-            girlboy: [ // Stays as "girlboy" key for Girl Boy Picture category
-                "https://i.postimg.cc/MT45CtVN/6845c86d06664c0d602c0e17ba10480f.jpg",
-                "https://i.postimg.cc/vB6fVyx2/9d4f821b53e68f04ff49a7c43499f15c.jpg",
-                "https://i.postimg.cc/66fT1TKL/a6e910ae97d6076692164821f6d3179d.jpg",
-                "https://i.postimg.cc/NM4Yb9XK/48369d14623abc236237b029671e988d.jpg",
-                "https://i.postimg.cc/j5mVMH5d/dc7ba1986c4112eb609dcc311f633e4b.jpg",
-                "https://i.postimg.cc/W4xSKXMK/ea2a24f95805c87e1cd5bed610c6f245.jpg",
-                "https://i.postimg.cc/C5h86q6X/e458e0f28662753f0e86b424a33c0472.jpg",
-                "https://i.postimg.cc/50xjxMqF/c79b6e8bb33bb2f8f0aaa543385e6bd0.jpg",
-                "https://i.postimg.cc/50xjxMqF/c79b6e8bb33bb2f8f0aaa543385e6bd0.jpg", 
-                "https://i.postimg.cc/bvFNj2J4/4e152d58a8e570f1236abe6545469632.jpg"
-            ],
-            natural: [ // Stays as "natural" key for Natural Wellpeper category
-                "https://i.postimg.cc/7YLzDqt8/5cbd1b330882055eab2d06d6f6e447d2.jpg",
-                "https://i.postimg.cc/wM19f42P/77fb6f27a4fd3db77a0bec94193bcdbc.jpg",
-                "https://i.postimg.cc/6qxNc677/eca555389948889e85d7799a9fa2d84b.jpg",
-                "https://i.postimg.cc/8kZHLKqG/7493a220980feb008f5780ccd9428666.jpg",
-                "https://i.postimg.cc/50hFmzqw/d9faf0ced7471eb5c06e3e5a30d1b35e.jpg",
-                "https://i.postimg.cc/MKKzFTPR/0a1556e9f98d1b8a0ea0733a76fd5b86.jpg",
-                "https://i.postimg.cc/V6qbD67p/7b892307746a8e67078edd4c92f85611.jpg",
-                "https://i.postimg.cc/mZ0gtR8F/d546ef2007748926377bd3bfca44faa9.jpg",
-                "https://i.postimg.cc/15jcg8br/4efd8a3149b9d257b3d91a02e6260df6.jpg",
-                "https://i.postimg.cc/Vvy97pBZ/e93f30ba8187f8b60486dd46a25adaff.jpg"
-            ]
-        };
+        const adsLink = 'https://youtu.be/1zQKh_9xh7E?si=8ByKcRIOAYb2Qnrt';
 
-        // Map data-page attributes to user-friendly names for alt text and download names
-        const categoryDisplayNames = {
-            anime: "Anime Picture",
-            natural: "Natural Wallpaper",
-            girlboy: "Girl Boy Picture"
+        const newImages = [
+            "https://i.postimg.cc/RC8dThLz/FB-IMG-1750202032439.jpg",
+            "https://i.postimg.cc/NGNSvQ8N/FB-IMG-1750174252017.jpg",
+            "https://i.postimg.cc/0jN4K4vd/FB-IMG-1750175099829.jpg",
+            "https://i.postimg.cc/5tcDKp5b/FB-IMG-1750175355088.jpg"
+        ];
+        
+        const imageData = {
+            newVideo: newImages,
+            topVideo: newImages,
+            vipVideo: newImages
         };
+        
+        function generateRandomTime() {
+            const minutes = Math.floor(Math.random() * 20) + 1; 
+            const seconds = Math.floor(Math.random() * 60);
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            const formattedSeconds = String(seconds).padStart(2, '0');
+            return `${formattedMinutes}:${formattedSeconds}`;
+        }
 
         function generateImageGallery(galleryId, imageDataSource, isHomePage = false) {
             const galleryContainer = document.querySelector(`#${galleryId} .image-gallery`);
-            if (!galleryContainer) {
-                console.error(`Gallery container for ID "${galleryId}" not found.`);
-                return;
-            }
+            if (!galleryContainer) return;
+            
             galleryContainer.innerHTML = ''; 
 
             imageDataSource.forEach((imgData, index) => {
-                let imageUrl, imageAltText, baseFilenameForDownload;
-                let categoryKeyForName = galleryId; // Default to galleryId (e.g., 'anime', 'natural')
+                let imageUrl, imageAltText;
 
                 if (isHomePage) { 
                     imageUrl = imgData.url;
-                    // For home page, imgData.categoryKey helps get the display name
-                    imageAltText = `${categoryDisplayNames[imgData.categoryKey] || 'Image'} ${imgData.originalIndex + 1}`;
-                    baseFilenameForDownload = `${imgData.categoryKey}_image_${imgData.originalIndex + 1}`;
+                    imageAltText = `Video ${imgData.originalIndex + 1}`;
                 } else { 
                     imageUrl = imgData;
-                    const displayName = categoryDisplayNames[galleryId] || (galleryId.charAt(0).toUpperCase() + galleryId.slice(1));
-                    imageAltText = `${displayName} ${index + 1}`;
-                    baseFilenameForDownload = `${galleryId}_image_${index + 1}`;
-                }
-                
-                let fileExtension = '.jpg'; 
-                const lastDot = imageUrl.lastIndexOf('.');
-                if (lastDot > -1 && lastDot < imageUrl.length - 1) {
-                    const ext = imageUrl.substring(lastDot);
-                    if (['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext.toLowerCase())) {
-                        fileExtension = ext;
-                    }
+                    const h2_title = document.querySelector(`#${galleryId} h2`).textContent;
+                    imageAltText = `${h2_title} - Image ${index + 1}`;
                 }
                 
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('image-item');
+                
+                const imageLinkWrapper = document.createElement('a');
+                imageLinkWrapper.href = adsLink;
+                imageLinkWrapper.target = '_blank';
+                imageLinkWrapper.classList.add('image-link');
 
                 const img = document.createElement('img');
                 img.src = imageUrl;
-                img.alt = imageAltText; // Alt text for accessibility
+                img.alt = imageAltText;
                 img.loading = 'lazy';
+                
+                imageLinkWrapper.appendChild(img);
 
-                // No title element needed
+                const playIconDiv = document.createElement('div');
+                playIconDiv.classList.add('play-icon');
+                playIconDiv.innerHTML = `<svg viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>`;
+                imageLinkWrapper.appendChild(playIconDiv);
+                
+                const timeDiv = document.createElement('div');
+                timeDiv.classList.add('video-duration');
+                timeDiv.textContent = generateRandomTime();
+                imageLinkWrapper.appendChild(timeDiv);
 
                 const downloadLink = document.createElement('a');
-                downloadLink.href = imageUrl;
+                downloadLink.href = adsLink;
+                downloadLink.target = '_blank';
                 downloadLink.textContent = 'Download';
                 downloadLink.classList.add('download-btn');
-                downloadLink.setAttribute('download', `${baseFilenameForDownload}${fileExtension}`);
-
-                itemDiv.appendChild(img);
+                
+                itemDiv.appendChild(imageLinkWrapper);
                 itemDiv.appendChild(downloadLink);
                 galleryContainer.appendChild(itemDiv);
             });
@@ -331,25 +316,18 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const allImagesForHome = [];
-            Object.keys(imageData).forEach(categoryKey => {
-                imageData[categoryKey].forEach((url, index) => {
-                    allImagesForHome.push({
-                        url: url,
-                        categoryKey: categoryKey, // Store the original category key
-                        originalIndex: index      // Store the original index within its category
-                    });
+            newImages.forEach((url, index) => {
+                 allImagesForHome.push({
+                    url: url,
+                    originalIndex: index
                 });
             });
 
-            for (let i = allImagesForHome.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [allImagesForHome[i], allImagesForHome[j]] = [allImagesForHome[j], allImagesForHome[i]];
-            }
-
+            // সব পেজে ছবি দেখানো
             generateImageGallery('home', allImagesForHome, true); 
-            generateImageGallery('anime', imageData.anime);
-            generateImageGallery('natural', imageData.natural);
-            generateImageGallery('girlboy', imageData.girlboy);
+            generateImageGallery('new-video', imageData.newVideo);
+            generateImageGallery('top-video', imageData.topVideo);
+            generateImageGallery('vip-video', imageData.vipVideo);
 
             document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
@@ -357,20 +335,28 @@
         const navLinks = document.querySelectorAll('nav .nav-link');
         const pages = document.querySelectorAll('.page');
 
+        // --- পরিবর্তিত জাভাস্ক্রিপ্ট কোড ---
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault(); 
-
-                navLinks.forEach(navLink => navLink.classList.remove('active'));
-                pages.forEach(page => page.classList.remove('active-page'));
-
-                link.classList.add('active');
                 const pageId = link.getAttribute('data-page');
-                const targetPage = document.getElementById(pageId);
-                if (targetPage) {
-                    targetPage.classList.add('active-page');
+
+                // চেক করা হচ্ছে কোন লিঙ্কে ক্লিক করা হয়েছে
+                if (pageId === 'home') {
+                    // যদি 'Home' হয়, তাহলে পেজ পরিবর্তন হবে
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    pages.forEach(page => page.classList.remove('active-page'));
+
+                    link.classList.add('active');
+                    const targetPage = document.getElementById(pageId);
+                    if (targetPage) {
+                        targetPage.classList.add('active-page');
+                    }
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    // অন্যথায়, বিজ্ঞাপনের লিঙ্ক খুলবে
+                    window.open(adsLink, '_blank');
                 }
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>
