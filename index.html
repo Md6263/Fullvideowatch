@@ -46,6 +46,12 @@
             background-color: #007bff;
             color: #ffffff;
         }
+        /* ব্যানার বিজ্ঞাপনের জন্য স্টাইল */
+        .banner-ad-container {
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+        }
         .page {
             display: none;
             padding: 20px;
@@ -76,7 +82,6 @@
                 grid-template-columns: repeat(4, 1fr);
             }
         }
-
         .image-item {
             background-color: #1c1c1c;
             border: 1px solid #383838;
@@ -92,7 +97,6 @@
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
         }
-
         .image-link {
             position: relative;
             display: block;
@@ -142,7 +146,6 @@
             font-weight: 500;
             pointer-events: none;
         }
-
         .download-btn {
             display: inline-block;
             background-color: #007bff;
@@ -170,12 +173,7 @@
             border-top: 1px solid #333;
             color: #aaa;
         }
-        /* Responsive adjustments */
-        @media (max-width: 991px) {
-             .image-gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        @media (max-width: 991px) { .image-gallery { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 767px) {
             header h1 { font-size: 2em; }
             nav { padding: 10px 5px; }
@@ -209,50 +207,47 @@
         <a href="#" data-page="vip-video" class="nav-link">VIP video</a>
     </nav>
 
+    <!-- Native Banner Ad (Top) -->
+    <div class="banner-ad-container">
+        <script async="async" data-cfasync="false" src="//pl26946130.profitableratecpm.com/b9c4ffc7313412f85a8a45573dc8dc06/invoke.js"></script>
+        <div id="container-b9c4ffc7313412f85a8a45573dc8dc06"></div>
+    </div>
+
     <main>
         <section id="home" class="page active-page">
             <h2>All Videos</h2>
             <div class="image-gallery"></div>
         </section>
-
-        <section id="new-video" class="page">
-            <h2>New Videos</h2>
-            <div class="image-gallery"></div>
-        </section>
-
-        <section id="top-video" class="page">
-            <h2>Top Videos</h2>
-            <div class="image-gallery"></div>
-        </section>
-
-        <section id="vip-video" class="page">
-            <h2>VIP Videos</h2>
-            <div class="image-gallery"></div>
-        </section>
+        <!-- অন্যান্য সেকশনগুলো এখন আর দরকার নেই কারণ মেন্যু ক্লিক করলে সরাসরি লিঙ্ক খুলবে -->
     </main>
+    
+    <!-- Native Banner Ad (Bottom) -->
+    <!-- জরুরি सूचना: এই ব্যানারটি কাজ নাও করতে পারে। এর জন্য আপনাকে আপনার অ্যাড নেটওয়ার্ক থেকে একটি নতুন ব্যানার কোড নিতে হবে। -->
+     <div class="banner-ad-container">
+        <script async="async" data-cfasync="false" src="//pl26946130.profitableratecpm.com/b9c4ffc7313412f85a8a45573dc8dc06/invoke.js"></script>
+        <div id="container-b9c4ffc7313412f85a8a45573dc8dc06-bottom"></div> <!-- ID পরিবর্তন করা হলো, কিন্তু নতুন স্ক্রিপ্ট দরকার -->
+    </div>
+
 
     <footer>
+        <!-- Live Visitor Counter -->
+        <div style="margin:15px;">
+            <script type="text/javascript" src="https://www.free-counters.org/count/i2bh"></script><br>
+            <a href='https://www.versicherungen.at/tier-krankenversicherung/' style="color:#555; font-size:12px; text-decoration:none;">Tierkrankenversicherung</a> 
+            <script type='text/javascript' src='https://www.whomania.com/ctr?id=c70987aeed502c68b564aac00e0966029d0ff2e6'></script>
+        </div>
+        
         <p>© <span id="currentYear"></span> ALL VIRAL VIDEO. All rights reserved.</p>
     </footer>
 
-<script type="text/javascript" src="https://www.free-counters.org/count/i2bh"></script><br>
- <a href='https://www.versicherungen.at/tier-krankenversicherung/'>Tierkrankenversicherung</a> <script type='text/javascript' src='https://www.whomania.com/ctr?id=c70987aeed502c68b564aac00e0966029d0ff2e6'></script>
-
-
-
-
-
     <script>
-        // --- পরিবর্তিত কোড: নতুন পাঁচটি লিঙ্ক একটি লিস্টে রাখা হয়েছে ---
+        // আপনার নতুন দুটি বিজ্ঞাপনের লিঙ্ক
         const adLinks = [
-            'https://obqj2.com/4/9460044',
-            'https://obqj2.com/4/9460046',
-            'https://obqj2.com/4/9460045',
-            'https://obqj2.com/4/9454322',
-            'https://obqj2.com/4/9460043'
+            'https://www.profitableratecpm.com/ptc2gngdw2?key=5dbc858654884078190717ddc7a81074',
+            'https://www.profitableratecpm.com/czn020ee?key=7583b9b39852a831d63e1d866eaebc7e'
         ];
 
-        // --- নতুন ফাংশন: র‍্যান্ডমভাবে একটি লিঙ্ক বেছে নেওয়ার জন্য ---
+        // র‍্যান্ডমভাবে একটি লিঙ্ক বেছে নেওয়ার ফাংশন
         function getRandomAdLink() {
             const randomIndex = Math.floor(Math.random() * adLinks.length);
             return adLinks[randomIndex];
@@ -265,38 +260,22 @@
             "https://i.postimg.cc/5tcDKp5b/FB-IMG-1750175355088.jpg"
         ];
         
-        const imageData = {
-            newVideo: newImages,
-            topVideo: newImages,
-            vipVideo: newImages
-        };
-        
+        // ভিডিওর সময় ৫ মিনিটের নিচে রাখার ফাংশন
         function generateRandomTime() {
-            const minutes = Math.floor(Math.random() * 20) + 1; 
+            const minutes = Math.floor(Math.random() * 5); // 0 থেকে 4 পর্যন্ত মিনিট জেনারেট করবে
             const seconds = Math.floor(Math.random() * 60);
             const formattedMinutes = String(minutes).padStart(2, '0');
             const formattedSeconds = String(seconds).padStart(2, '0');
             return `${formattedMinutes}:${formattedSeconds}`;
         }
 
-        function generateImageGallery(galleryId, imageDataSource, isHomePage = false) {
+        function generateImageGallery(galleryId, imageDataSource) {
             const galleryContainer = document.querySelector(`#${galleryId} .image-gallery`);
             if (!galleryContainer) return;
             
             galleryContainer.innerHTML = ''; 
 
-            imageDataSource.forEach((imgData, index) => {
-                let imageUrl, imageAltText;
-
-                if (isHomePage) { 
-                    imageUrl = imgData.url;
-                    imageAltText = `Video ${imgData.originalIndex + 1}`;
-                } else { 
-                    imageUrl = imgData;
-                    const h2_title = document.querySelector(`#${galleryId} h2`).textContent;
-                    imageAltText = `${h2_title} - Image ${index + 1}`;
-                }
-                
+            imageDataSource.forEach((imageUrl, index) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('image-item');
                 
@@ -309,7 +288,7 @@
 
                 const img = document.createElement('img');
                 img.src = imageUrl;
-                img.alt = imageAltText;
+                img.alt = `Video ${index + 1}`;
                 img.loading = 'lazy';
                 
                 imageLinkWrapper.appendChild(img);
@@ -337,39 +316,21 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const allImagesForHome = [];
-            newImages.forEach((url, index) => {
-                 allImagesForHome.push({
-                    url: url,
-                    originalIndex: index
-                });
-            });
-
-            generateImageGallery('home', allImagesForHome, true); 
-            generateImageGallery('new-video', imageData.newVideo);
-            generateImageGallery('top-video', imageData.topVideo);
-            generateImageGallery('vip-video', imageData.vipVideo);
-
+            generateImageGallery('home', newImages);
             document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
 
         const navLinks = document.querySelectorAll('nav .nav-link');
-        const pages = document.querySelectorAll('.page');
-
+        
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault(); 
                 const pageId = link.getAttribute('data-page');
 
                 if (pageId === 'home') {
+                    // শুধুমাত্র হোম বাটনকে অ্যাক্টিভ রাখা
                     navLinks.forEach(navLink => navLink.classList.remove('active'));
-                    pages.forEach(page => page.classList.remove('active-page'));
-
                     link.classList.add('active');
-                    const targetPage = document.getElementById(pageId);
-                    if (targetPage) {
-                        targetPage.classList.add('active-page');
-                    }
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
                     window.open(getRandomAdLink(), '_blank');
@@ -378,7 +339,11 @@
         });
     </script>
 
-   <script type='text/javascript' src='//pl26946051.profitableratecpm.com/c6/16/d7/c616d71004e68d51536a234813109873.js'></script>
+    <!-- Social Bar Ad -->
+    <script type='text/javascript' src='//pl26946051.profitableratecpm.com/c6/16/d7/c616d71004e68d51536a234813109873.js'></script>
+
+    <!-- Popunder Ad -->
+    <script type='text/javascript' src='//pl26946140.profitableratecpm.com/d7/f5/52/d7f552912f36b1753173f94452fd7e12.js'></script>
 
 </body>
 </html>
