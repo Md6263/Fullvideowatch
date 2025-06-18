@@ -236,11 +236,13 @@
     </footer>
 
     <script>
-        // --- পরিবর্তিত কোড: তিনটি লিঙ্ক একটি লিস্টে রাখা হয়েছে ---
+        // --- পরিবর্তিত কোড: নতুন পাঁচটি লিঙ্ক একটি লিস্টে রাখা হয়েছে ---
         const adLinks = [
-            'https://www.profitableratecpm.com/d0y190sk?key=c22ce8ad12716855572b105ea5e0bf6a',
-            'https://www.profitableratecpm.com/janmx2fb?key=cbe369b1278284bdb232004bdde52f9f',
-            'https://www.profitableratecpm.com/c83q66pu?key=32bd58d8e094d171e335d875e43b4dd3'
+            'https://obqj2.com/4/9460044',
+            'https://obqj2.com/4/9460046',
+            'https://obqj2.com/4/9460045',
+            'https://obqj2.com/4/9454322',
+            'https://obqj2.com/4/9460043'
         ];
 
         // --- নতুন ফাংশন: র‍্যান্ডমভাবে একটি লিঙ্ক বেছে নেওয়ার জন্য ---
@@ -291,11 +293,10 @@
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('image-item');
                 
-                // প্রতিবার নতুন একটি র‍্যান্ডম লিঙ্ক নেওয়া হচ্ছে
                 const randomLink = getRandomAdLink();
                 
                 const imageLinkWrapper = document.createElement('a');
-                imageLinkWrapper.href = randomLink; // র‍্যান্ডম লিঙ্ক ব্যবহার করা হলো
+                imageLinkWrapper.href = randomLink;
                 imageLinkWrapper.target = '_blank';
                 imageLinkWrapper.classList.add('image-link');
 
@@ -317,7 +318,7 @@
                 imageLinkWrapper.appendChild(timeDiv);
 
                 const downloadLink = document.createElement('a');
-                downloadLink.href = randomLink; // একই র‍্যান্ডম লিঙ্ক ব্যবহার করা হলো
+                downloadLink.href = randomLink;
                 downloadLink.target = '_blank';
                 downloadLink.textContent = 'Download';
                 downloadLink.classList.add('download-btn');
@@ -364,7 +365,6 @@
                     }
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
-                    // মেন্যু লিঙ্কেও র‍্যান্ডম লিঙ্ক ব্যবহার করা হলো
                     window.open(getRandomAdLink(), '_blank');
                 }
             });
