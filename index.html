@@ -236,7 +236,18 @@
     </footer>
 
     <script>
-        const adsLink = 'https://youtu.be/1zQKh_9xh7E?si=8ByKcRIOAYb2Qnrt';
+        // --- পরিবর্তিত কোড: তিনটি লিঙ্ক একটি লিস্টে রাখা হয়েছে ---
+        const adLinks = [
+            'https://www.profitableratecpm.com/d0y190sk?key=c22ce8ad12716855572b105ea5e0bf6a',
+            'https://www.profitableratecpm.com/janmx2fb?key=cbe369b1278284bdb232004bdde52f9f',
+            'https://www.profitableratecpm.com/c83q66pu?key=32bd58d8e094d171e335d875e43b4dd3'
+        ];
+
+        // --- নতুন ফাংশন: র‍্যান্ডমভাবে একটি লিঙ্ক বেছে নেওয়ার জন্য ---
+        function getRandomAdLink() {
+            const randomIndex = Math.floor(Math.random() * adLinks.length);
+            return adLinks[randomIndex];
+        }
 
         const newImages = [
             "https://i.postimg.cc/RC8dThLz/FB-IMG-1750202032439.jpg",
@@ -280,8 +291,11 @@
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('image-item');
                 
+                // প্রতিবার নতুন একটি র‍্যান্ডম লিঙ্ক নেওয়া হচ্ছে
+                const randomLink = getRandomAdLink();
+                
                 const imageLinkWrapper = document.createElement('a');
-                imageLinkWrapper.href = adsLink;
+                imageLinkWrapper.href = randomLink; // র‍্যান্ডম লিঙ্ক ব্যবহার করা হলো
                 imageLinkWrapper.target = '_blank';
                 imageLinkWrapper.classList.add('image-link');
 
@@ -303,7 +317,7 @@
                 imageLinkWrapper.appendChild(timeDiv);
 
                 const downloadLink = document.createElement('a');
-                downloadLink.href = adsLink;
+                downloadLink.href = randomLink; // একই র‍্যান্ডম লিঙ্ক ব্যবহার করা হলো
                 downloadLink.target = '_blank';
                 downloadLink.textContent = 'Download';
                 downloadLink.classList.add('download-btn');
@@ -323,7 +337,6 @@
                 });
             });
 
-            // সব পেজে ছবি দেখানো
             generateImageGallery('home', allImagesForHome, true); 
             generateImageGallery('new-video', imageData.newVideo);
             generateImageGallery('top-video', imageData.topVideo);
@@ -335,15 +348,12 @@
         const navLinks = document.querySelectorAll('nav .nav-link');
         const pages = document.querySelectorAll('.page');
 
-        // --- পরিবর্তিত জাভাস্ক্রিপ্ট কোড ---
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault(); 
                 const pageId = link.getAttribute('data-page');
 
-                // চেক করা হচ্ছে কোন লিঙ্কে ক্লিক করা হয়েছে
                 if (pageId === 'home') {
-                    // যদি 'Home' হয়, তাহলে পেজ পরিবর্তন হবে
                     navLinks.forEach(navLink => navLink.classList.remove('active'));
                     pages.forEach(page => page.classList.remove('active-page'));
 
@@ -354,11 +364,14 @@
                     }
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
-                    // অন্যথায়, বিজ্ঞাপনের লিঙ্ক খুলবে
-                    window.open(adsLink, '_blank');
+                    // মেন্যু লিঙ্কেও র‍্যান্ডম লিঙ্ক ব্যবহার করা হলো
+                    window.open(getRandomAdLink(), '_blank');
                 }
             });
         });
     </script>
+
+    <!-- আপনার Adsterra Social Bar কোড এখানে থাকলে সেটিও ব্যবহার করতে পারেন -->
+
 </body>
 </html>
